@@ -1,0 +1,137 @@
+:root{
+    --main-color:rgb(255, 0, 0);
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family:  sans-serif;
+    transition: 0.3s linear;
+}
+
+body{
+    background: linear-gradient(#111,#333);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--main-color);
+    clip-path: circle(40% at right 70%);
+    z-index: -1;
+
+}
+.container{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    height: 80%;
+    width: 80%;
+    overflow: hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+nav .logo{
+    font-size: 32px;
+    color:white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+nav .logo span{
+    font-size: 32px;
+    color: var(--main-color);
+}
+nav .logo:hover{
+    color: var(--main-color);
+}
+nav .logo:hover span{
+    color: white;
+}
+nav ul{
+    margin-right: 50px;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    
+}
+nav ul li a:hover{
+    color: var(--main-color);
+    font-size: 17px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75%;
+    width: 80%;
+    margin: auto  ;
+
+}
+.content .text{
+    color: #fff;
+    width: 40%;
+
+
+}
+.content .text h2{
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+.content .text p{
+    font-size: 18px;
+    line-height: 25px;
+    margin: 10px ;
+}
+.content .image{
+    width: 40%;
+
+}
+.content .image img{
+    width: 90%;
+}
+
+
+@media (min-width:950px) and (max-width: 1150px){
+    .content .image img{
+        width: 90%;
+    }
+}
+@media (max-width:950px){
+    
+    .content ,nav {
+        flex-direction: column  ;
+        justify-content: center;
+    }
+    .content .image, .content .text{
+        width: 80%;
+    }
+    .content .image img{
+        width: 50%;
+    }
+    body::after{
+        clip-path: circle(40% at bottom );
+    }
+
+}
+
+    
